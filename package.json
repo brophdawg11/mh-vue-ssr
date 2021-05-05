@@ -9,8 +9,12 @@
     "url": "git+https://github.com/brophdawg11/mh-vue-ssr.git"
   },
   "scripts": {
+    "build:client": "webpack --config build/webpack.client.config.js",
+    "build:server": "webpack --config build/webpack.server.config.js",
+    "build": "npm run clean && npm run build:server && npm run build:client",
     "dev": "npm run clean && webpack && webpack serve",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "start": "node src/server.js"
   },
   "dependencies": {
     "copy-webpack-plugin": "6.4.1",
